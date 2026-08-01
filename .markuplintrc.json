@@ -1,0 +1,11 @@
+{
+  "extends": ["markuplint:recommended"],
+  "rules": { "wai-aria": false },
+  "nodeRules": [
+    {
+      "selector": "img",
+      "rules": { "required-attr": { "width": false, "height": false } }
+    },
+    { "selector": "input", "rules": { "required-attr": { "title": false } } }
+  ]
+}
