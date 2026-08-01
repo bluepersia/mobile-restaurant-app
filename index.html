@@ -19,6 +19,11 @@
 
     <!-- Blocks -->
     <link rel="stylesheet" href="src/css/blocks/header/header.css" />
+    <link rel="stylesheet" href="src/css/blocks/menu/menu.css" />
+    <link
+      rel="stylesheet"
+      href="src/css/blocks/product-card/product-card.css"
+    />
   </head>
 
   <body>
@@ -28,5 +33,16 @@
         <p class="header__para">The best burgers and pizzas in town.</p>
       </div>
     </header>
+
+    <main>
+      <section class="menu" id="menu">
+        <h2 class="menu__title sr-only">Menu</h2>
+        <div class="menu__inner container">
+          <ul class="menu__list reset-list" data-list></ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="dist/scripts/index.js" type="module"></script>
   </body>
 </html>

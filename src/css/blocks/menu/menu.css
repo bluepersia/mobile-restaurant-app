@@ -1,0 +1,9 @@
+.menu {
+  padding: 4.18rem 0 0;
+}
+
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.81rem;
+}
