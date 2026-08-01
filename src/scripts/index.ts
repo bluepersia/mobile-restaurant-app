@@ -1,3 +1,7 @@
-const message = "Hello World";
+import Menu from "./components/Menu/Menu.js";
+import CartContext from "./contexts/CartContext/CartContext.js";
+import type { CartContextReturn } from "./contexts/CartContext/CartContext.types";
 
-console.log(message);
+const cartContext: CartContextReturn = CartContext();
+
+Menu(document.getElementById("menu")!, cartContext);
