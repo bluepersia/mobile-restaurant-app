@@ -1,0 +1,21 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-declaration-strict-value"],
+  "rules": {
+    "selector-class-pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*(?:__[a-z0-9]+(?:-[a-z0-9]+)*)?(?:--[a-z0-9]+(?:-[a-z0-9]+)*)?$",
+    "scale-unlimited/declaration-strict-value": [
+      {
+        "ignoreValues": [
+          "0",
+          "none",
+          "transparent",
+          "inherit",
+          "auto",
+          "currentColor"
+        ],
+        "disableFix": false,
+        "severity": "error"
+      }
+    ]
+  }
+}
