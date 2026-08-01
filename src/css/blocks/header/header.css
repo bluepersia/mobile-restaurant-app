@@ -1,0 +1,15 @@
+.header {
+  background-image: url("/assets/images/bg-cover.png");
+  background-size: cover;
+  padding: 3.1rem 0;
+  color: white;
+}
+
+.header__title {
+  font-weight: 400;
+  font-size: 2.43rem;
+}
+
+.header__para {
+  font-size: 1.375rem;
+}
