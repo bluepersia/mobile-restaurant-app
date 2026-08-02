@@ -6,6 +6,7 @@
   font-weight: bold;
   padding: 1.125em 2em;
   transition: all 300ms;
+  border-radius: 4px;
 }
 
 .btn:hover,
