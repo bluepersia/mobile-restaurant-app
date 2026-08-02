@@ -1,0 +1,57 @@
+.order {
+  text-align: center;
+
+  /* relative layout */
+  margin-bottom: 3.3rem;
+}
+
+.order__title {
+  margin-bottom: 4rem;
+}
+
+.order__title,
+.order__item-title {
+  font-weight: 400;
+  font-size: 1.75rem;
+}
+
+.order__summary {
+  margin-bottom: 3.3rem;
+}
+
+.order__items {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.56rem;
+  border-bottom: solid 2px #393333;
+  padding-bottom: 1.875rem;
+  margin-bottom: 0.875rem;
+}
+
+.order__item {
+  display: flex;
+  align-items: center;
+}
+
+.order__item-title {
+  /* relative layout */
+  margin-right: 0.81rem;
+}
+
+.order__item-remove-btn {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.75rem;
+  color: #bbb;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.order__item-remove-btn:hover,
+.order__item-remove-btn:focus {
+  color: black;
+}
+
+.order__item-price {
+  margin-left: auto;
+  font-size: 1.25rem;
+}
