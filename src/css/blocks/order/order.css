@@ -55,3 +55,11 @@
   margin-left: auto;
   font-size: 1.25rem;
 }
+
+.order__submission {
+  background-color: #ecfdf5;
+  padding: 3.25rem;
+  text-align: center;
+  color: #065f46;
+  font-size: 2rem;
+}

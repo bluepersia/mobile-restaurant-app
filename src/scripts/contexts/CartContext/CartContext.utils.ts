@@ -55,4 +55,11 @@ function removeFromCart(state: CartContextState, id: number): CartContextState {
   };
 }
 
-export { addToCart, removeFromCart };
+function freezeState(state: CartContextState): CartContextState {
+  return {
+    ...state,
+    isFrozen: true,
+  };
+}
+
+export { addToCart, removeFromCart, freezeState };

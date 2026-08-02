@@ -1,20 +1,27 @@
 import type { CartContextReturn } from "../../contexts/CartContext/CartContext.types";
 import type { CartItem, FullCartItem } from "../../types/CartItem";
 import type { MenuItem } from "../../types/MenuItem";
+import type { OrderReturn } from "./Order.types";
 import {
   generateOrderFromCart,
   generateOrderItemsHTML,
+  generateSubmissionHTML,
 } from "./Order.utils.js";
 
 export default function Order(
   root: HTMLElement,
   cartContext: CartContextReturn,
   menu: MenuItem[],
-): void {
+): OrderReturn {
+  let openCheckout: () => void = () => {};
+
+  const innerEl = root.querySelector("[data-inner]")!;
   const itemsEl = root.querySelector("[data-items]")!;
   const totalPriceEl = root.querySelector("[data-total-price]")!;
+  const completeBtn = root.querySelector<HTMLElement>("[data-complete]")!;
 
   root.addEventListener("click", handleClick);
+  completeBtn.addEventListener("click", handleCompleteClick);
 
   cartContext.onCartChanged.push(renderCart);
 
@@ -42,4 +49,20 @@ export default function Order(
       cartContext.removeItem(Number(e.target.dataset.remove));
     }
   }
+
+  function handleCompleteClick(): void {
+    openCheckout();
+  }
+
+  function displaySubmission(name: string): void {
+    innerEl.innerHTML = generateSubmissionHTML(name);
+    cartContext.freeze();
+  }
+
+  return {
+    setOpenCheckout: (newOpenCheckout) => {
+      openCheckout = newOpenCheckout;
+    },
+    displaySubmission,
+  };
 }

@@ -1,0 +1,41 @@
+.checkout {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  height: fit-content;
+  background-color: white;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 2.93rem 1.43rem 1.875rem;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 25%);
+  border-radius: 4px;
+  border: none;
+
+  /* relative layout */
+  width: 87.33%;
+  max-width: 600px;
+}
+
+.checkout__title {
+  font-size: 1.5rem;
+
+  /* relative layout */
+  margin-bottom: 2.875rem;
+}
+
+.checkout__input {
+  border: solid 1.3px #757575;
+  padding: 0.85em 1.35em;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  color: #757575;
+  width: 100%;
+
+  /* relative layout */
+  margin-bottom: 1.5rem;
+}
+
+.checkout__pay-btn {
+  /* relative layout */
+  margin-top: 2.9rem;
+}

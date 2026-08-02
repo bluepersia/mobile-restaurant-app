@@ -26,6 +26,7 @@
     />
     <link rel="stylesheet" href="src/css/blocks/order/order.css" />
     <link rel="stylesheet" href="src/css/blocks/btn/btn.css" />
+    <link rel="stylesheet" href="src/css/blocks/checkout/checkout.css" />
   </head>
 
   <body>
@@ -45,7 +46,7 @@
       </section>
 
       <section class="order" id="order">
-        <div class="order__inner container">
+        <div class="order__inner container" data-inner>
           <h2 class="order__title">Your order</h2>
           <div class="order__summary">
             <ul class="order__items reset-list" data-items></ul>
@@ -55,12 +56,55 @@
             </div>
           </div>
 
-          <button class="order__complete-btn btn" data-complete>
+          <button
+            class="order__complete-btn btn"
+            data-complete
+            aria-haspopup="dialog"
+          >
             Complete order
           </button>
         </div>
       </section>
     </main>
+
+    <dialog class="checkout" id="checkout" aria-label="Checkout">
+      <h2 class="checkout__title">Enter card details</h2>
+
+      <form class="checkout__form" data-form>
+        <label for="name" class="sr-only">Name:</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Enter your name"
+          required
+          pattern="[a-zA-Z\s]+"
+          class="checkout__input"
+        />
+        <label for="card-num" class="sr-only">Card Number:</label>
+        <input
+          id="card-num"
+          name="card-num"
+          type="text"
+          placeholder="Enter card number"
+          required
+          pattern="[0-9]+"
+          class="checkout__input"
+        />
+        <label for="cvv" class="sr-only">CVV:</label>
+        <input
+          id="cvv"
+          name="cvv"
+          type="text"
+          placeholder="Enter CVV"
+          required
+          pattern="[0-9]+"
+          maxlength="3"
+          class="checkout__input"
+        />
+        <button class="checkout__pay-btn btn">Pay</button>
+      </form>
+    </dialog>
 
     <script src="dist/scripts/index.js" type="module"></script>
   </body>

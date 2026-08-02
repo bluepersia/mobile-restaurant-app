@@ -1,22 +1,31 @@
 import type { CartItem } from "../../types/CartItem";
 import type { CartContextReturn, CartContextState } from "./CartContext.types";
-import { addToCart, removeFromCart } from "./CartContext.utils.js";
+import { addToCart, freezeState, removeFromCart } from "./CartContext.utils.js";
 
 export default function CartContext(): CartContextReturn {
   let state: CartContextState = {
     cart: [],
+    isFrozen: false,
   };
 
   const onCartChanged: Array<() => void> = [];
 
   function addItem(id: number): void {
-    state = addToCart(state, id);
+    const newState = addToCart(state, id);
+
+    if (newState === state) return;
+
+    state = newState;
 
     onCartChanged.forEach((el) => el());
   }
 
   function removeItem(id: number): void {
-    state = removeFromCart(state, id);
+    const newState = removeFromCart(state, id);
+
+    if (newState === state) return;
+
+    state = newState;
 
     onCartChanged.forEach((el) => el());
   }
@@ -25,10 +34,15 @@ export default function CartContext(): CartContextReturn {
     return state.cart;
   }
 
+  function freeze(): void {
+    state = freezeState(state);
+  }
+
   return {
     addItem,
     removeItem,
     getCart,
     onCartChanged,
+    freeze,
   };
 }
