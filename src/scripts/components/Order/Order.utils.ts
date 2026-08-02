@@ -38,4 +38,14 @@ function generateOrderItemsHTML(order: FullCartItem[]): string {
     .join("\n");
 }
 
-export { generateOrderFromCart, generateOrderItemsHTML };
+function generateSubmissionHTML(name: string): string {
+  return `<div class="order__submission">
+        <p class="order__submission-text">Thanks, ${name}! Your order is on its way!</p>
+    </div>`;
+}
+
+export {
+  generateOrderFromCart,
+  generateOrderItemsHTML,
+  generateSubmissionHTML,
+};
