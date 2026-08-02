@@ -1,9 +1,11 @@
 import type { CartContextReturn } from "../../contexts/CartContext/CartContext.types";
+import type { MenuItem } from "../../types/MenuItem";
 import { generateMenuHTML } from "./Menu.utils.js";
 
 export default function Menu(
   root: HTMLElement,
   cartContext: CartContextReturn,
+  menu: MenuItem[],
 ): void {
   const listEl = root.querySelector("[data-list]")!;
 
@@ -12,9 +14,7 @@ export default function Menu(
   init();
 
   function init(): void {
-    fetch("/assets/data/menu.json")
-      .then((res) => res.json())
-      .then((data) => (listEl.innerHTML = generateMenuHTML(data)));
+    listEl.innerHTML = generateMenuHTML(menu);
   }
   function handleClick(e: MouseEvent): void {
     if (!(e.target instanceof HTMLElement)) return;

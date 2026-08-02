@@ -24,6 +24,8 @@
       rel="stylesheet"
       href="src/css/blocks/product-card/product-card.css"
     />
+    <link rel="stylesheet" href="src/css/blocks/order/order.css" />
+    <link rel="stylesheet" href="src/css/blocks/btn/btn.css" />
   </head>
 
   <body>
@@ -39,6 +41,23 @@
         <h2 class="menu__title sr-only">Menu</h2>
         <div class="menu__inner container">
           <ul class="menu__list reset-list" data-list></ul>
+        </div>
+      </section>
+
+      <section class="order" id="order">
+        <div class="order__inner container">
+          <h2 class="order__title">Your order</h2>
+          <div class="order__summary">
+            <ul class="order__items reset-list" data-items></ul>
+            <div class="order__item" aria-live="polite">
+              <h3 class="order__item-title">Total price:</h3>
+              <p class="order__item-price" data-total-price></p>
+            </div>
+          </div>
+
+          <button class="order__complete-btn btn" data-complete>
+            Complete order
+          </button>
         </div>
       </section>
     </main>

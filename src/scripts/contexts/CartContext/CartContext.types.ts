@@ -6,7 +6,9 @@ type CartContextState = {
 
 type CartContextReturn = {
   addItem: (id: number) => void;
+  removeItem: (id: number) => void;
   getCart: () => CartItem[];
+  onCartChanged: Array<() => void>;
 };
 
 export type { CartContextState, CartContextReturn };

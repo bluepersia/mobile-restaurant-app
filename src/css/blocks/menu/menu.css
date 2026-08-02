@@ -1,5 +1,8 @@
 .menu {
   padding: 4.18rem 0 0;
+
+  /* relative layout */
+  margin-bottom: 2.81rem;
 }
 
 .menu__list {
