@@ -62,4 +62,11 @@ function freezeState(state: CartContextState): CartContextState {
   };
 }
 
-export { addToCart, removeFromCart, freezeState };
+function emptyCart(state: CartContextState): CartContextState {
+  return {
+    ...state,
+    cart: [],
+  };
+}
+
+export { addToCart, removeFromCart, freezeState, emptyCart };

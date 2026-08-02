@@ -56,6 +56,7 @@ export default function Order(
 
   function displaySubmission(name: string): void {
     innerEl.innerHTML = generateSubmissionHTML(name);
+    cartContext.empty();
     cartContext.freeze();
   }
 

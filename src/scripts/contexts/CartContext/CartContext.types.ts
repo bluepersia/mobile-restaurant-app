@@ -11,6 +11,7 @@ type CartContextReturn = {
   getCart: () => CartItem[];
   onCartChanged: Array<() => void>;
   freeze: () => void;
+  empty: () => void;
 };
 
 export type { CartContextState, CartContextReturn };
